@@ -3,10 +3,10 @@ import homeVue from '@/views/home.vue'
 import calendarVue from '@/views/calendar.vue'
 import pageVue from '@/views/page.vue'
 import notesVue from '@/views/notes.vue'
-import flexVue from '@/views/flex.vue'
-import todolistVue from '@/views/todolist.vue'
+// import flexVue from '@/views/flex.vue'
+// import todolistVue from '@/views/todolist.vue'
 // import stockVue from '@/views/stock.vue'
-import searchForQQ from '@/views/searchForQQ.vue'
+// import searchForQQ from '@/views/searchForQQ.vue'
 
 // 自动导入modules文件夹下所有ts文件
 // const modules = import.meta.glob('./modules/**/*.ts')
@@ -33,7 +33,7 @@ const routes = [
   {
     path: '/',
     component: homeVue,
-    redirect: '/todolist',
+    redirect: '/page',
   },
   {
     path: '/page',
@@ -47,18 +47,18 @@ const routes = [
   //   path: '/notes',
   //   component: notesVue,
   // },
-  {
-    path: '/todolist',
-    component: todolistVue,
-  },
-  {
-    path: '/searchForQQ',
-    component: searchForQQ,
-  },
-  {
-    path: '/flex',
-    component: flexVue,
-  },
+  // {
+  //   path: '/todolist',
+  //   component: todolistVue,
+  // },
+  // {
+  //   path: '/searchForQQ',
+  //   component: searchForQQ,
+  // },
+  // {
+  //   path: '/flex',
+  //   component: flexVue,
+  // },
   // {
   //   path: '/stock',
   //   component: () => import('@/views/stock.vue'),

@@ -18,7 +18,7 @@ let ingData = ref(localStorage.ingData == '' ? [] : localStorage.ingData.split('
 let doneData = ref(localStorage.doneData == '' ? [] : localStorage.doneData.split(','))
 // localStorage.clear()
 
-// 添加的代办内容
+// 添加的待办内容
 let addValue = ref('')
 
 // 刷新前保存修改
@@ -37,7 +37,8 @@ onBeforeUnmount(() => {
 // let refAll = getCurrentInstance().ctx.$refs
 // const addtodo = refAll.addtodo
 
-function Addtodo() {
+function Addtodo(e) {
+  e.preventDefault()
   const text = addValue.value
   if (!text) return
   ingData.value.unshift(text)
@@ -76,19 +77,18 @@ function upload_todolist() {
   const list_reader = new FileReader()
   list_reader.onload = (proEvt) => {
     let tmp = proEvt.target.result
-    tmp = tmp.trim().split('\n')
+    tmp = tmp
+      .trim()
+      .split('\n')
+      .filter(v => v !== '\r')
     doneData.value.push(...ingData.value) //把待办全部推入结束
-    ingData.value = [] //置空代办
-    ingData.value.push(...tmp) //推入代办文件的文本
+    ingData.value = [] //置空待办
+    ingData.value.push(...tmp) //推入待办文件的文本
   }
   //将 Blob 或者 File 对象转根据特殊的编码格式转化为内容 (字符串形式)
   // 这个方法是异步的，也就是说，只有当执行完成后才能够查看到结果，如果直接查看是无结果的，并返回 undefined
   list_reader.readAsText(newList_upload)
 }
-
-onMounted(() => {
-  const upload = document.querySelector('#upload')
-})
 
 onMounted(() => {
   console.log('ingData: ', localStorage.ingData.split(','))
@@ -97,13 +97,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="app">
+  <div id="todo">
     <form class="header" @submit="Addtodo">
       <p>ToDolist</p>
       <input v-model.trim="addValue" type="text" placeholder="请输入ToDo" id="addtodo" />
       <button type="submit">添加</button>
       <label for="upload" class="labelButton">
-          <iconpark-icon name="folder-upload"></iconpark-icon>
+        <iconpark-icon name="folder-upload"></iconpark-icon>
       </label>
       <input
         @change="upload_todolist()"
@@ -177,14 +177,14 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
-#app {
+#todo {
   position: relative;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   font-family: 'pingfang sc', 'Courier New', Courier, monospace;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow-y: scroll;
   background-color: #fff;
 }
@@ -295,7 +295,8 @@ onMounted(() => {
 // 零散样式...................................
 // .........................................
 
-button,.labelButton {
+button,
+.labelButton {
   // width: 5em;
   display: flex;
   align-items: center;

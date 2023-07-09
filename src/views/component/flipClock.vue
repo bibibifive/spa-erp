@@ -47,10 +47,10 @@ setInterval(() => {
 }, 1000)
 
 const thisYear = clock.value.format('MMDD')
-
 </script>
 
 <style lang="scss" scoped>
+$clock_heigth: 45px;
 .flipClock {
   display: inline-block;
   position: relative;
@@ -65,29 +65,29 @@ const thisYear = clock.value.format('MMDD')
     transition: all 0.3s ease-in-out 0.2s;
   }
 
-  &:hover::after{
+  &:hover::after {
     content: '日期';
   }
   &::after {
-  content: '时分';
-  position: absolute;
-  top: 0;
-  right: -20px;
-  font-size: 16px;
-  height: 75px;
-  text-align: end;
-  writing-mode: vertical-lr;
-  letter-spacing: 5px;
-}
+    content: '时分';
+    position: absolute;
+    top: 0;
+    right: -20px;
+    font-size: 16px;
+    height: $clock_heigth + 5px;
+    text-align: end;
+    writing-mode: vertical-lr;
+    letter-spacing: 5px;
+  }
 }
 
 .clockBox,
 .year {
   display: flex;
-  width: 180px;
+  width: $clock_heigth * 2.5;
   justify-content: space-between;
   margin: 0 5px;
-  gap: 10px;
+  gap: calc($clock_heigth / 7);
   z-index: 2;
   div {
     display: flex;
@@ -95,13 +95,13 @@ const thisYear = clock.value.format('MMDD')
     align-items: center;
     background-color: rgb(42, 42, 42);
     width: calc(100% / 2);
-    height: 70px;
+    height: $clock_heigth;
     border-radius: 8%;
     clip-path: inset(0 0 50% 0);
     div {
       border: none;
       color: #eee;
-      font-size: 60px;
+      font-size: $clock_heigth * 0.8;
       font-weight: 700;
       clip-path: unset;
     }
@@ -131,6 +131,4 @@ const thisYear = clock.value.format('MMDD')
   z-index: 3;
   transform: rotateX(90deg);
 }
-
-
 </style>

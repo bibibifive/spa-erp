@@ -103,7 +103,7 @@ const getTableData = (base) => {
   return tableData.data
 }
 
-// import { exportExcel, objectToArray, objectToArray_forheader } from '@/utils/excel'
+import { exportExcel, objectToArray, objectToArray_forheader } from '@/utils/excel'
 </script>
 
 <template>
@@ -114,7 +114,7 @@ const getTableData = (base) => {
           <t-space>
             <t-button
               @click="
-                exportExcel([objectToArray_forheader(columns, 'title'), ...objectToArray(data, 'except', ['index'])])
+                exportExcel([objectToArray_forheader(columns, 'title'), ...objectToArray(totalData, 'except', ['index'])])
               "
               >导出 Excel</t-button
             >

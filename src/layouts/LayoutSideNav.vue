@@ -52,12 +52,12 @@ const routes = [
     iconName: 'order-adjustment-column',
     title: '分页',
   },
-  {
-    to: '/todolist',
-    value: 'todolist',
-    iconName: 'bulletpoint',
-    title: '待办',
-  },
+  // {
+  //   to: '/todolist',
+  //   value: 'todolist',
+  //   iconName: 'bulletpoint',
+  //   title: '待办',
+  // },
   // {
   //   to: '/calendar',
   //   value: 'calendar',
@@ -70,25 +70,25 @@ const routes = [
   //   iconName: 'books',
   //   title: '笔记',
   // },
-  {
-    to: '/searchForQQ',
-    value: 'searchForQQ',
-    iconName: 'logo-qq',
-    title: 'searchForQQ',
-  },
+  // {
+  //   to: '/searchForQQ',
+  //   value: 'searchForQQ',
+  //   iconName: 'logo-qq',
+  //   title: 'searchForQQ',
+  // },
   {
     to: '/flex',
     value: 'flex',
     iconName: 'logo-windows',
     title: '布局',
   },
-  {
-    to: '/stock',
-    value: 'stock',
-    iconName: 'chart-stock',
-    title: 'echart',
-    origin: 'iconpark',
-  },
+  // {
+  //   to: '/stock',
+  //   value: 'stock',
+  //   iconName: 'chart-stock',
+  //   title: 'echart',
+  //   origin: 'iconpark',
+  // },
 ]
 </script>
 
@@ -110,13 +110,6 @@ const routes = [
   justify-content: space-between;
 }
 
-// @media (min-width: 1024px) {
-// }
-
-// .t-menu__content {
-//   margin-left: 20px;
-// }
-
 section {
   height: 100vh;
 }
@@ -125,7 +118,7 @@ section {
   display: flex;
   align-items: center;
   gap: 20px;
-  height: 80px;
+  height: 70px;
   padding-left: 15px;
   font-size: 3rem;
   font-weight: 700;

@@ -1,13 +1,16 @@
 <template>
   <t-layout class="appmokuai">
     <layout-side-nav />
-    <t-content class="right">
-      <router-view v-slot="{ Component }">
-        <keep-alive>
-          <component :is="Component" />
-        </keep-alive>
-      </router-view>
-    </t-content>
+    <t-layout>
+      <!-- <t-header> </t-header> -->
+      <t-content class="right">
+        <router-view v-slot="{ Component }">
+          <keep-alive>
+            <component :is="Component" />
+          </keep-alive>
+        </router-view>
+      </t-content>
+    </t-layout>
   </t-layout>
 </template>
 
@@ -33,7 +36,7 @@ import LayoutSideNav from '@/layouts/LayoutSideNav.vue'
 
 @media screen and (max-width: 700px) {
   .appmokuai {
-    left: -231px;
+    left: -233px;
   }
   .right {
     margin-left: 0;
