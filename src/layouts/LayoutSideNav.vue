@@ -76,12 +76,12 @@ const routes = [
   //   iconName: 'logo-qq',
   //   title: 'searchForQQ',
   // },
-  {
-    to: '/flex',
-    value: 'flex',
-    iconName: 'logo-windows',
-    title: '布局',
-  },
+  // {
+  //   to: '/flex',
+  //   value: 'flex',
+  //   iconName: 'logo-windows',
+  //   title: '布局',
+  // },
   // {
   //   to: '/stock',
   //   value: 'stock',
