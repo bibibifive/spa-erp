@@ -11,6 +11,6 @@
 6. 创建 / 跟进 / 审批单据
 7. 审批消息
 
-###　点击链接 ↓
+### 点击链接 ↓
 
 ### [https://bibibifive.github.io/spa-erp](https://bibibifive.github.io/spa-erp)
